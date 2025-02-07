@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags to define character set and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    
+    <!-- Link to Bootstrap CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Internal CSS for custom styles -->
+    <style>
+        /* Error message styling */
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+        
+        /* Background gradient animation */
+        body {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            height: 100vh;
+        }
+
+        /* Keyframes for background animation */
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        /* Styling the container for the form */
+        .container {
+            background-color: #03346E; /* Dark background for the form */
+            padding: 30px;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            width: 100%;
+            max-width: 400px; /* Max width of the form */
+        }
+
+        /* Styling the form title */
+        #title {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            border-radius: 10px;
+        }
+
+        /* Styling labels for inputs */
+        label {
+            color: antiquewhite;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Form container -->
+<div class="container mt-5">
+    <!-- Form title -->
+    <h2 class="text-center" style="color: white;">Registration Form</h2>
+
+    <!-- Registration form -->
+    <form id="registrationForm" novalidate>
+        
+        <!-- Full name input field -->
+        <div class="mb-3 mt-4" style="padding: 10px;">
+            <input type="text" class="form-control" id="fullName" required placeholder="Full Name">
+            <!-- Error message for full name validation -->
+            <div id="nameError" class="error"></div>
+        </div>
+
+        <!-- Email input field -->
+        <div class="mb-3" style="padding: 10px;">
+            <input type="email" class="form-control" id="email" required placeholder="Email ID">
+            <!-- Error message for email validation -->
+            <div id="emailError" class="error"></div>
+        </div>
+
+        <!-- Phone number input field -->
+        <div class="mb-3" style="padding: 10px;">
+            <input type="text" class="form-control" id="phone" required placeholder="Phone Number">
+            <!-- Error message for phone number validation -->
+            <div id="phoneError" class="error"></div>
+        </div>
+
+        <!-- Password input field -->
+        <div class="mb-3" style="padding: 10px;">
+            <input type="password" class="form-control" id="password" required placeholder="Password">
+            <!-- Error message for password validation -->
+            <div id="passwordError" class="error"></div>
+        </div>
+
+        <!-- Confirm password input field -->
+        <div class="mb-3" style="padding: 10px;">
+            <input type="password" class="form-control" id="confirmPassword" required placeholder="Confirm Password">
+            <!-- Error message for confirm password validation -->
+            <div id="confirmPasswordError" class="error"></div>
+        </div>
+
+        <!-- Submit button for the form -->
+        <div style="display: flex; justify-content: right; margin-top: 2rem; padding-right: 13px;">
+            <button type="submit" style="background-color: #6EC207; color: white; border-radius: 4px; border: none; padding-left: 1rem; padding-right: 1rem; padding-top: 3px; padding-bottom: 3px; font-size: larger;">Register</button>
+        </div>
+    </form>
+</div>
+
+<!-- Bootstrap JS for responsive design -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- External JavaScript file for form validation -->
+<script src="project.js"></script>
+
+</body>
+</html>
